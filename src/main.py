@@ -33,7 +33,6 @@ def listen_audio(wake_event):
     print("response")
     print(response)
 
-
     actions.query_indexing(response)
     time.sleep(1)
     wake_event.clear()
@@ -60,7 +59,7 @@ def queue_manager(q):
     while True :
         if behavior.start() != None: 
     
-            q.put(  behavior.start())
+            q.put( behavior.start())
             time.sleep(5)
         time.sleep(1)
 
@@ -110,7 +109,7 @@ def expression_controller(wake_event, stop_event):
     
 if __name__ == "__main__":
 
-
+ 
     wake_event = Event()
     stop_event = Event()
     
